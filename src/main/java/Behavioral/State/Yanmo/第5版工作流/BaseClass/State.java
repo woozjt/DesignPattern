@@ -1,7 +1,5 @@
 package Behavioral.State.Yanmo.第5版工作流.BaseClass;
 
-import Behavioral.State.Yanmo.第5版工作流.StateMachine;
-
 /**
  * Created by sahoo on 17/4/25.
  */
