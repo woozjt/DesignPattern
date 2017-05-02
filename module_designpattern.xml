@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_designpattern" default="compile.module.designpattern">
+  <dirname property="module.designpattern.basedir" file="${ant.file.module_designpattern}"/>
+  
+  <property name="module.jdk.home.designpattern" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.designpattern" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.designpattern" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.designpattern" value="-encoding UTF-8 -source 1.5 -target 1.5 ${compiler.args}"/>
+  
+  <property name="designpattern.output.dir" value="${module.designpattern.basedir}/target/classes"/>
+  <property name="designpattern.testoutput.dir" value="${module.designpattern.basedir}/target/test-classes"/>
+  
+  <path id="designpattern.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="designpattern.module.production.classpath">
+    <path refid="${module.jdk.classpath.designpattern}"/>
+  </path>
+  
+  <path id="designpattern.runtime.production.module.classpath">
+    <pathelement location="${designpattern.output.dir}"/>
+  </path>
+  
+  <path id="designpattern.module.classpath">
+    <path refid="${module.jdk.classpath.designpattern}"/>
+    <pathelement location="${designpattern.output.dir}"/>
+  </path>
+  
+  <path id="designpattern.runtime.module.classpath">
+    <pathelement location="${designpattern.testoutput.dir}"/>
+    <pathelement location="${designpattern.output.dir}"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.designpattern">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.designpattern">
+    <patternset refid="excluded.from.module.designpattern"/>
+  </patternset>
+  
+  <path id="designpattern.module.sourcepath">
+    <dirset dir="${module.designpattern.basedir}">
+      <include name="src/main/java"/>
+      <include name="src/main/resources"/>
+    </dirset>
+  </path>
+  
+  <path id="designpattern.module.test.sourcepath">
+    <dirset dir="${module.designpattern.basedir}">
+      <include name="src/test/java"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.designpattern" depends="compile.module.designpattern.production,compile.module.designpattern.tests" description="Compile module DesignPattern"/>
+  
+  <target name="compile.module.designpattern.production" depends="register.custom.compilers" description="Compile module DesignPattern; production classes">
+    <mkdir dir="${designpattern.output.dir}"/>
+    <javac2 destdir="${designpattern.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.designpattern}/javac">
+      <compilerarg line="${compiler.args.designpattern}"/>
+      <bootclasspath refid="designpattern.module.bootclasspath"/>
+      <classpath refid="designpattern.module.production.classpath"/>
+      <src refid="designpattern.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.designpattern"/>
+    </javac2>
+    
+    <copy todir="${designpattern.output.dir}">
+      <fileset dir="${module.designpattern.basedir}/src/main/java">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+      <fileset dir="${module.designpattern.basedir}/src/main/resources">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.designpattern.tests" depends="register.custom.compilers,compile.module.designpattern.production" description="compile module DesignPattern; test classes" unless="skip.tests">
+    <mkdir dir="${designpattern.testoutput.dir}"/>
+    <javac2 destdir="${designpattern.testoutput.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.designpattern}/javac">
+      <compilerarg line="${compiler.args.designpattern}"/>
+      <bootclasspath refid="designpattern.module.bootclasspath"/>
+      <classpath refid="designpattern.module.classpath"/>
+      <src refid="designpattern.module.test.sourcepath"/>
+      <patternset refid="excluded.from.compilation.designpattern"/>
+    </javac2>
+    
+    <copy todir="${designpattern.testoutput.dir}">
+      <fileset dir="${module.designpattern.basedir}/src/test/java">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="clean.module.designpattern" description="cleanup module">
+    <delete dir="${designpattern.output.dir}"/>
+    <delete dir="${designpattern.testoutput.dir}"/>
+  </target>
+</project>
