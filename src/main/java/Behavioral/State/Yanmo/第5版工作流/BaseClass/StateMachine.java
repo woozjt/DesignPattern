@@ -22,7 +22,7 @@ public class StateMachine {
      * 在客户完成自己的业务工作后调用
      */
     public void doWork(){
-//        转调相应的状态对象真正完成功能处理
+        //转调相应的状态对象真正完成功能处理
         this.state.doWork(this);
     }
 
