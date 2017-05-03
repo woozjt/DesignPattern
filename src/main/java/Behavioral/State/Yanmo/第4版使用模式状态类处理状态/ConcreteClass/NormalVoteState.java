@@ -5,6 +5,7 @@ import Behavioral.State.Yanmo.第4版使用模式状态类处理状态.VoteManag
 
 /**
  * Created by zhangjiantao on 2017/2/27.
+ * 正常状态
  */
 public class NormalVoteState implements VoteState {
     public void vote(String user, String voteItem, VoteManager voteManager) {

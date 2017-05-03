@@ -63,7 +63,7 @@ public class VoteManager {
             state = new BlackVoteState();
         }
 
-//        然后转调状态对象来进行相应的操作
+        //然后转调状态对象来进行相应的操作
         state.vote(user,voteItem,this);
 
     }
