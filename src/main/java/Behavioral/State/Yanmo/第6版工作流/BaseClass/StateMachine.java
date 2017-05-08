@@ -20,7 +20,7 @@ public class StateMachine {
      * 在客户完成自己的业务工作后调用
      */
     public void doWork(){
-//        转调相应的状态对象真正完成功能处理
+        //转调相应的状态对象真正完成功能处理
         this.state.doWork(this);
     }
 
@@ -31,7 +31,6 @@ public class StateMachine {
     public void setState(State state) {
         this.state = state;
     }
-
 
     public Object getBusinessVO() {
         return businessVO;

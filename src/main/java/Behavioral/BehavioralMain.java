@@ -1,6 +1,7 @@
 package Behavioral;
 
 
+import Behavioral.State.Yanmo.第4版使用模式状态类处理状态扩展.YM_StateTestDriveV4_1;
 import Behavioral.State.Yanmo.第6版工作流.YM_StateTestDriveV6;
 
 /**
@@ -20,8 +21,10 @@ public class BehavioralMain {
         //Behavioral.State.Yanmo.第1版问题来源.YM_StateTestDriveV1.start();
         //Behavioral.State.Yanmo.第3版使用模式上下文处理状态.YM_StateTestDriveV3.start();
         //YM_StateTestDriveV4.start();
-        YM_StateTestDriveV6.start();
+        //YM_StateTestDriveV6.start();
+        YM_StateTestDriveV4_1.start();
         System.out.println();
+
         System.out.println("|---------------------------------行为模式测试---------------------------------|");
 
     }

@@ -1,6 +1,6 @@
 package Behavioral.State.Yanmo.第6版工作流;
 
-import Behavioral.State.Yanmo.第6版工作流.ConcreteClass.LeaveRquestContext;
+import Behavioral.State.Yanmo.第6版工作流.ConcreteClass.LeaveRequestContext;
 import Behavioral.State.Yanmo.第6版工作流.ConcreteClass.ProjectManagerState2;
 import Behavioral.State.Yanmo.第6版工作流.Model.LeaveRequestModel;
 
@@ -16,7 +16,7 @@ public class YM_StateTestDriveV6 {
         lrm.setLeaveDays(5);
 
         //创建上下文对象
-        LeaveRquestContext request = new LeaveRquestContext();
+        LeaveRequestContext request = new LeaveRequestContext();
         //为上下文对象设置业务数据对象
         request.setBusinessVO(lrm);
         //配置上下文，作为开始的状态，以后就不管了

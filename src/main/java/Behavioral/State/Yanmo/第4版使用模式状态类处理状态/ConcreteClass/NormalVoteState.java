@@ -15,6 +15,6 @@ public class NormalVoteState implements VoteState {
         System.out.println("恭喜你投票成功");
 
         // 正常投票完成，编排维护下一个状态，同一个人再投票就是重复了
-        voteManager.getMapState().put(user,new RepeatVoteState());
+        voteManager.getMapState().put(user, new RepeatVoteState());
     }
 }
