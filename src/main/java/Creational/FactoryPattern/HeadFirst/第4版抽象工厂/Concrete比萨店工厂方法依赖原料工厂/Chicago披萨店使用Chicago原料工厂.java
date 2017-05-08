@@ -2,7 +2,7 @@ package Creational.FactoryPattern.HeadFirst.第4版抽象工厂.Concrete比萨�
 
 import Creational.FactoryPattern.HeadFirst.第4版抽象工厂.Concrete原料工厂.ChicagoPizza原料工厂;
 import Creational.FactoryPattern.HeadFirst.第4版抽象工厂.Concrete比萨依赖原料工厂.*;
-import Creational.FactoryPattern.HeadFirst.第4版抽象工厂.Base原料抽象工厂.Pizza原料抽象工厂;
+import Creational.FactoryPattern.HeadFirst.第4版抽象工厂.Base原料工厂.Pizza原料工厂;
 import Creational.FactoryPattern.HeadFirst.第4版抽象工厂.Base比萨.Pizza;
 import Creational.FactoryPattern.HeadFirst.第4版抽象工厂.Base比萨店工厂方法.PizzaStore;
 
@@ -13,7 +13,7 @@ public class Chicago披萨店使用Chicago原料工厂 extends PizzaStore {
     @Override
     protected Pizza createPizza(String item) {
         Pizza pizza = null;
-        Pizza原料抽象工厂 ingredientFactory =
+        Pizza原料工厂 ingredientFactory =
                 new ChicagoPizza原料工厂();
 
         if (item.equals("cheese")) {
