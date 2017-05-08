@@ -3,12 +3,13 @@ package Creational.FactoryPattern.HeadFirst.第3版工厂方法;
 import Creational.FactoryPattern.HeadFirst.第1版具体类导致脆弱的代码.BasePizza.Pizza;
 import Creational.FactoryPattern.HeadFirst.第3版工厂方法.BaseClass.PizzaStore;
 import Creational.FactoryPattern.HeadFirst.第3版工厂方法.ConcreteStore.ChicagoPizzaStore;
+import Creational.FactoryPattern.HeadFirst.第3版工厂方法.ConcreteStore.DependentPizzaStore;
 import Creational.FactoryPattern.HeadFirst.第3版工厂方法.ConcreteStore.NYPizzaStore;
 
 /**
  * Created by sahoo on 16/4/30.
  */
-public class PizzaTestDrive {
+public class HF_FactoryTestDriveV3 {
     public static void start() {
         PizzaStore nyStore = new NYPizzaStore();
         PizzaStore chicagoStore = new ChicagoPizzaStore();
@@ -18,5 +19,8 @@ public class PizzaTestDrive {
 
         pizza = chicagoStore.orderPizza("cheese");
         System.out.println("Joel ordered a " + pizza.getName() + "\n");
+
+        pizza = new DependentPizzaStore().createPizza("NY", "cheese");
+        System.out.println("Emily ordered a " + pizza.getName() + "\n");
     }
 }

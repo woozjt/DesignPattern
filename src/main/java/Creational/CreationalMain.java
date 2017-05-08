@@ -1,6 +1,6 @@
 package Creational;
 
-import Creational.FactoryPattern.DPExplained.第2版抽象工厂使用多态解决.AbstractFactoryTestDriveV2;
+import Creational.FactoryPattern.HeadFirst.第3版工厂方法.HF_FactoryTestDriveV3;
 
 /**
  * Created by zhangjiantao on 2016/4/15.
@@ -8,11 +8,8 @@ import Creational.FactoryPattern.DPExplained.第2版抽象工厂使用多态解�
 public class CreationalMain {
 
     public static void main(String[] args) {
-//        DirecorAndClient.Start();
 
-        // PizzaTestDrive.start();
-      //  Creational.FactoryPattern.HeadFirst.第4版抽象工厂.PizzaTestDrive.Start();
-
-        AbstractFactoryTestDriveV2.Start();
+        HF_FactoryTestDriveV3.start();
+        //AbstractFactoryTestDriveV2.Start();
     }
 }

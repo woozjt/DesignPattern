@@ -1,15 +1,16 @@
-package Creational.FactoryPattern.HeadFirst.第4版抽象工厂.Concrete比萨;
+package Creational.FactoryPattern.HeadFirst.第4版抽象工厂.Concrete比萨依赖原料工厂;
 
-import Creational.FactoryPattern.HeadFirst.第4版抽象工厂.Base原料抽象工厂.PizzaIngredientFactory;
+
+import Creational.FactoryPattern.HeadFirst.第4版抽象工厂.Base原料抽象工厂.Pizza原料抽象工厂;
 import Creational.FactoryPattern.HeadFirst.第4版抽象工厂.Base比萨.Pizza;
 
 /**
  * Created by zhangjiantao on 2016/5/3.
  */
-public class PepperoniPizza extends Pizza {
-    PizzaIngredientFactory ingredientFactory;
+public class VeggiePizza extends Pizza {
+    Pizza原料抽象工厂 ingredientFactory;
 
-    public PepperoniPizza(PizzaIngredientFactory ingredientFactory) {
+    public VeggiePizza(Pizza原料抽象工厂 ingredientFactory) {
         this.ingredientFactory = ingredientFactory;
     }
 
@@ -20,6 +21,5 @@ public class PepperoniPizza extends Pizza {
         sauce = ingredientFactory.createSauce();
         cheese = ingredientFactory.createCheese();
         veggies = ingredientFactory.createVeggies();
-        pepperoni = ingredientFactory.createPepperoni();
     }
 }
