@@ -1,13 +1,13 @@
-package Behavioral.State.Yanmo.第6版工作流;
+package Behavioral.State.Yanmo.第6版工作流改进版;
 
-import Behavioral.State.Yanmo.第6版工作流.Model.LeaveRequestContext;
-import Behavioral.State.Yanmo.第6版工作流.ConcreteClass.ProjectManagerState;
 import Behavioral.State.Yanmo.第6版工作流.Model.LeaveRequestModel;
+import Behavioral.State.Yanmo.第6版工作流改进版.Model.LeaveRequestContext;
+import Behavioral.State.Yanmo.第6版工作流改进版.ConcreteClass.ProjectManagerState;
 
 /**
- * Created by zhangjiantao on 2017/5/3.
+ * Created by zhangjiantao on 2017/5/8.
  */
-public class YM_StateTestDriveV6 {
+public class YM_StateTestDriveV6_1 {
     public static void start() {
         //创建业务对象，并设置业务数据
         LeaveRequestModel lrm = new LeaveRequestModel();

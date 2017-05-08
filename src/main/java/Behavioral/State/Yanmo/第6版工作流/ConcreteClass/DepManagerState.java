@@ -1,7 +1,7 @@
 package Behavioral.State.Yanmo.第6版工作流.ConcreteClass;
 
 import Behavioral.State.Yanmo.第6版工作流.BaseClass.LeaveRequestState;
-import Behavioral.State.Yanmo.第6版工作流.BaseClass.StateMachine;
+import Behavioral.State.Yanmo.第6版工作流.Model.StateMachine;
 import Behavioral.State.Yanmo.第6版工作流.Model.LeaveRequestModel;
 
 /**
@@ -15,5 +15,6 @@ public class DepManagerState implements LeaveRequestState {
 
         //部门经理审核以后，直接转向审核结束状态了
         request.setState(new AuditOverState());
+        //给申请人增加一个工作，让他查看审核结果
     }
 }

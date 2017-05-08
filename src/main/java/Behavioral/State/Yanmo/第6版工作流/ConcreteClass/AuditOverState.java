@@ -1,7 +1,7 @@
 package Behavioral.State.Yanmo.第6版工作流.ConcreteClass;
 
 import Behavioral.State.Yanmo.第6版工作流.BaseClass.LeaveRequestState;
-import Behavioral.State.Yanmo.第6版工作流.BaseClass.StateMachine;
+import Behavioral.State.Yanmo.第6版工作流.Model.StateMachine;
 import Behavioral.State.Yanmo.第6版工作流.Model.LeaveRequestModel;
 
 /**

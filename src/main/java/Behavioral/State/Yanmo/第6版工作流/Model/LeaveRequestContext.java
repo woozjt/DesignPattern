@@ -1,6 +1,4 @@
-package Behavioral.State.Yanmo.第6版工作流.ConcreteClass;
-
-import Behavioral.State.Yanmo.第6版工作流.BaseClass.StateMachine;
+package Behavioral.State.Yanmo.第6版工作流.Model;
 
 /**
  * Created by zhangjiantao on 2017/5/2.

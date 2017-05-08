@@ -1,15 +1,15 @@
-package Behavioral.State.Yanmo.第6版工作流.ConcreteClass;
+package Behavioral.State.Yanmo.第6版工作流改进版.ConcreteClass;
 
-import Behavioral.State.Yanmo.第6版工作流.BaseClass.LeaveRequestState;
-import Behavioral.State.Yanmo.第6版工作流.BaseClass.StateMachine;
 import Behavioral.State.Yanmo.第6版工作流.Model.LeaveRequestModel;
+import Behavioral.State.Yanmo.第6版工作流改进版.BaseClass.LeaveRequestState;
+import Behavioral.State.Yanmo.第6版工作流改进版.Model.StateMachine;
 
 import java.util.Scanner;
 
 /**
- * Created by zhangjiantao on 2017/5/3.
+ * Created by zhangjiantao on 2017/5/8.
  */
-public class DepManagerState2 implements LeaveRequestState{
+public class DepManagerState implements LeaveRequestState {
     public void doWork(StateMachine request) {
         //先把业务对象造型回来
         LeaveRequestModel lrm = (LeaveRequestModel)request.getBusinessVO();
@@ -27,7 +27,7 @@ public class DepManagerState2 implements LeaveRequestState{
             }
             lrm.setResult("部门经理审核结果：" + result);
             //部门经理审核以后，直接转向审核结束状态了
-            request.setState(new AuditOverState2());
+            request.setState(new AuditOverState());
             //继续执行下一步工作
             request.doWork();
 

@@ -62,15 +62,23 @@ public class VoteManager {
         VoteRepository.setVoteCount(user, oldVoteCount);
 
         VoteState state = null;
-        //2:直接从数据库获取该用户对应的下一个状态的编码
-        String stateId = VoteRepository.getTransferState(user);
 
+        //2:直接从数据库获取该用户对应的下一个状态的编码
         //开始根据状态编码来创建需用的状态对象
         //根据状态编码去获取相应的类
-        String className = "根据状态编码去获取相应的类";
+        String className = "从数据库中获取状态编码相应的类";
         //使用反射创建对象实例，简单示意一下
-        Class c = Class.forName(className) ;
-        state = (VoteState) c.newInstance();
+        Class c;
+        try {
+            c = Class.forName(className);
+            state = (VoteState) c.newInstance();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (InstantiationException e) {
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        }
         //然后转调状态对象来进行相应的操作
         state.vote(user, voteItem, this);
     }

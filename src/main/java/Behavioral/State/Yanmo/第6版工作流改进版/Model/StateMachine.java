@@ -1,9 +1,12 @@
-package Behavioral.State.Yanmo.第6版工作流.BaseClass;
+package Behavioral.State.Yanmo.第6版工作流改进版.Model;
+
+import Behavioral.State.Yanmo.第6版工作流改进版.BaseClass.State;
 
 /**
- * Created by sahoo on 17/4/25.
+ * Created by zhangjiantao on 2017/5/8.
  */
 public class StateMachine {
+
     /**
      * 持有一个状态对象
      */

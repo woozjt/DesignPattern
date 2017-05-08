@@ -1,13 +1,13 @@
-package Behavioral.State.Yanmo.第6版工作流.ConcreteClass;
+package Behavioral.State.Yanmo.第6版工作流改进版.ConcreteClass;
 
-import Behavioral.State.Yanmo.第6版工作流.BaseClass.LeaveRequestState;
-import Behavioral.State.Yanmo.第6版工作流.BaseClass.StateMachine;
 import Behavioral.State.Yanmo.第6版工作流.Model.LeaveRequestModel;
+import Behavioral.State.Yanmo.第6版工作流改进版.BaseClass.LeaveRequestState;
+import Behavioral.State.Yanmo.第6版工作流改进版.Model.StateMachine;
 
 /**
- * Created by zhangjiantao on 2017/5/3.
+ * Created by zhangjiantao on 2017/5/8.
  */
-public class AuditOverState2 implements LeaveRequestState {
+public class AuditOverState implements LeaveRequestState {
     public void doWork(StateMachine request) {
         //先把业务对象造型回来
         LeaveRequestModel lrm = (LeaveRequestModel) request.getBusinessVO();
